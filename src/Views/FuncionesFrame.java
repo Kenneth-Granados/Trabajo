@@ -8,16 +8,17 @@ package Views;
 import Conrtoller.FuncionController;
 import Models.Funcion;
 import Models.GraficaFuncion;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
  * @author Kenneth Granados
  */
-public  class FuncionesFrame extends javax.swing.JInternalFrame {
+public class FuncionesFrame extends javax.swing.JInternalFrame {
+
     FuncionController fc;
     GraficaFuncion grafica = new GraficaFuncion("Grafica", "Eje X", "Eje Y");
     
@@ -25,53 +26,74 @@ public  class FuncionesFrame extends javax.swing.JInternalFrame {
         initComponents();
         setupController();
     }
-
-    public void setupController(){
+    
+    public void setupController() {
         fc = new FuncionController(this);
         graficarButton.addActionListener(fc);
         agregarButton.addActionListener(fc);
         cleanButton.addActionListener(fc);
+        funcTextField.addKeyListener(fc);//action de teclado
+        x0TextField.addKeyListener(fc);
+        xnTextField.addKeyListener(fc);
+        intervaloTextField.addKeyListener(fc);
     }
     
-    public void getgrafica(){
+    public void getgrafica() {
         try {
             String func = funcTextField.getText();
             double x0 = Double.parseDouble(x0TextField.getText());
             double xn = Double.parseDouble(xnTextField.getText());
             double d = Double.parseDouble(intervaloTextField.getText());
             
-            Funcion f= new Funcion(func);
-            double[] x=f.Rango(x0, xn, d);
-            double[] y=f.evaluar(x);
+            Funcion f = new Funcion(func);
+            double[] x = f.Rango(x0, xn, d);
+            double[] y = f.evaluar(x);
             grafica.CrearGrafica(func, x, y);
-        } catch (Exception  ex) {
-            JOptionPane.showMessageDialog(this,"Chingue su madre" +ex.getMessage());
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Chingue su madre" + ex.getMessage());
         }
-}
-    public void addgrafica(){
-         try {
+    }
+
+    public void addgrafica() {
+        try {
             String func = funcTextField.getText();
             double x0 = Double.parseDouble(x0TextField.getText());
             double xn = Double.parseDouble(xnTextField.getText());
             double d = Double.parseDouble(intervaloTextField.getText());
-
             
-            Funcion f= new Funcion(func);
-            double[] x=f.Rango(x0, xn, d);
-            double[] y=f.evaluar(x);
+            Funcion f = new Funcion(func);
+            double[] x = f.Rango(x0, xn, d);
+            double[] y = f.evaluar(x);
             grafica.AgregarGrafica(func, x, y);
         } catch (Exception ex) {
             Logger.getLogger(FuncionesFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    public void clean(){
+    public void clean() {
         funcTextField.setText("");
         x0TextField.setText("");
         xnTextField.setText("");
         intervaloTextField.setText("");
         grafica.LimpiarGrafica();
     }
+
+    public JTextField getFuncTextField() {
+        return funcTextField;
+    }
+
+    public JTextField getX0TextField() {
+        return x0TextField;
+    }
+
+    public JTextField getXnTextField() {
+        return xnTextField;
+    }
+
+    public JTextField getIntervaloTextField() {
+        return intervaloTextField;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -225,7 +247,6 @@ public  class FuncionesFrame extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Panel;
