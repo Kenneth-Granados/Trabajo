@@ -20,6 +20,7 @@ import javax.swing.JTextField;
 public class FuncionesFrame extends javax.swing.JInternalFrame {
 
     FuncionController fc;
+    GraficaFrame gf = new GraficaFrame();
     GraficaFuncion grafica = new GraficaFuncion("Grafica", "Eje X", "Eje Y");
     
     public FuncionesFrame() {
@@ -60,11 +61,11 @@ public class FuncionesFrame extends javax.swing.JInternalFrame {
             double x0 = Double.parseDouble(x0TextField.getText());
             double xn = Double.parseDouble(xnTextField.getText());
             double d = Double.parseDouble(intervaloTextField.getText());
-            
             Funcion f = new Funcion(func);
             double[] x = f.Rango(x0, xn, d);
             double[] y = f.evaluar(x);
             grafica.AgregarGrafica(func, x, y);
+       
         } catch (Exception ex) {
             Logger.getLogger(FuncionesFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -75,7 +76,7 @@ public class FuncionesFrame extends javax.swing.JInternalFrame {
         x0TextField.setText("");
         xnTextField.setText("");
         intervaloTextField.setText("");
-        grafica.LimpiarGrafica();
+        
     }
 
     public JTextField getFuncTextField() {
@@ -172,14 +173,14 @@ public class FuncionesFrame extends javax.swing.JInternalFrame {
                             .addComponent(intervaloTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                             .addComponent(xnTextField, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(x0TextField, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(graficarButton, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(agregarButton, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(cleanButton, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(funcTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 159, Short.MAX_VALUE)))
+                        .addComponent(funcTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -217,22 +218,22 @@ public class FuncionesFrame extends javax.swing.JInternalFrame {
         Panel.setLayout(PanelLayout);
         PanelLayout.setHorizontalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 334, Short.MAX_VALUE)
         );
         PanelLayout.setVerticalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 284, Short.MAX_VALUE)
+            .addGap(0, 164, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -242,7 +243,7 @@ public class FuncionesFrame extends javax.swing.JInternalFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(12, 12, 12))
         );
 
         pack();

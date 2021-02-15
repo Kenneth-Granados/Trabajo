@@ -52,6 +52,6 @@ public class MainController implements ActionListener{
      
      public void invokeFuncion(){
        FuncionesFrame ff = new FuncionesFrame();
-       p.showChild(ff,false) ;       
+       p.showChild(ff,false) ;   
    }
 }
