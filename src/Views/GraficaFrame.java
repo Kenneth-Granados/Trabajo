@@ -9,7 +9,7 @@ import Models.Funcion;
 import Models.GraficaFuncion;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JInternalFrame;
+import java.lang.NullPointerException;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,44 +17,46 @@ import javax.swing.JOptionPane;
  * @author Kenneth Granados
  */
 public class GraficaFrame extends javax.swing.JInternalFrame {
- GraficaFuncion grafica = new GraficaFuncion("Grafica", "Eje X", "Eje Y");
+   GraficaFuncion grafica = new GraficaFuncion("Grafica", "Eje X", "Eje Y");
+   FuncionesFrame ff = new FuncionesFrame();
     /**
      * Creates new form GraficaFrame
      */
     public GraficaFrame() {
         initComponents();
+       
     }
-
-     public void graficar(String func,double x0,double xn,double d) {
-        try {
-           
-            Funcion f = new Funcion(func);
-            double[] x = f.Rango(x0, xn, d);
-            double[] y = f.evaluar(x);
-            grafica.CrearGrafica(func, x, y);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "Chingue su madre" + ex.getMessage());
-        }
-    }
-
-    public void agregar(String func,double x0,double xn,double d) {
-        try {
-            Funcion f = new Funcion(func);
-            double[] x = f.Rango(x0, xn, d);
-            double[] y = f.evaluar(x);
-            grafica.AgregarGrafica(func, x, y);
-            
-        } catch (Exception ex) {
-            Logger.getLogger(FuncionesFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-     public void showChild(JInternalFrame frame){
-       setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR)); 
-      Panel.add(frame);
-      frame.setVisible(true);
-         
-   }
+//
+//    public void grafica() {
+//        try {
+//             String func = ff.getFuncTextField().getText();
+//            double x0 = Double.parseDouble(ff.getX0TextField().getText());
+//            double xn = Double.parseDouble(ff.getXnTextField().getText());
+//            double d = Double.parseDouble(ff.getIntervaloTextField().getText());
+//            Funcion f = new Funcion(func);
+//            double[] x = f.Rango(x0, xn, d);
+//            double[] y = f.evaluar(x);
+//            grafica.CrearGrafica(func, x, y);
+//        } catch (Exception ex ||NullPointerException ) {
+//            JOptionPane.showMessageDialog(this, "Chingue su madre" + ex.getMessage());
+//        }
+//    }
+//
+//    public void agregar() {
+//        try {
+//             String func = ff.getFuncTextField().getText();
+//            double x0 = Double.parseDouble(ff.getX0TextField().getText());
+//            double xn = Double.parseDouble(ff.getXnTextField().getText());
+//            double d = Double.parseDouble(ff.getIntervaloTextField().getText());
+//            Funcion f = new Funcion(func);
+//            double[] x = f.Rango(x0, xn, d);
+//            double[] y = f.evaluar(x);
+//            grafica.AgregarGrafica(func, x, y);
+//       
+//        } catch (Exception ex) {
+//            Logger.getLogger(FuncionesFrame.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,44 +66,38 @@ public class GraficaFrame extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Panel = grafica.ObtenerGrafica()
-        ;
+        Panel = grafica.ObtenerGrafica();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setResizable(true);
 
         javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
         Panel.setLayout(PanelLayout);
         PanelLayout.setHorizontalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 282, Short.MAX_VALUE)
+            .addGap(0, 281, Short.MAX_VALUE)
         );
         PanelLayout.setVerticalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
+            .addGap(0, 170, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 302, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 182, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();

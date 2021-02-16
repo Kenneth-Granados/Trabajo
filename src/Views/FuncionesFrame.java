@@ -20,7 +20,6 @@ import javax.swing.JTextField;
 public class FuncionesFrame extends javax.swing.JInternalFrame {
 
     FuncionController fc;
-    GraficaFrame gf = new GraficaFrame();
     GraficaFuncion grafica = new GraficaFuncion("Grafica", "Eje X", "Eje Y");
     
     public FuncionesFrame() {
@@ -76,7 +75,7 @@ public class FuncionesFrame extends javax.swing.JInternalFrame {
         x0TextField.setText("");
         xnTextField.setText("");
         intervaloTextField.setText("");
-        
+        grafica.LimpiarGrafica();
     }
 
     public JTextField getFuncTextField() {
@@ -123,8 +122,6 @@ public class FuncionesFrame extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setTitle("Funciones");
-
-        jPanel1.setBackground(new java.awt.Color(102, 255, 102));
 
         jLabel1.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
         jLabel1.setText("Funcion");

@@ -32,7 +32,7 @@ public class MainController implements ActionListener{
             invokeresolver();
              break;
          case "Crear":
-             invokecreate();
+           
              break;
          case "Funcion":
              invokeFuncion();

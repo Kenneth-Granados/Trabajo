@@ -6,7 +6,6 @@
 package Conrtoller;
 
 import Views.FuncionesFrame;
-import Views.GraficaFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -39,6 +38,8 @@ public class FuncionController implements ActionListener, KeyListener {
         }
     }
 
+  
+    
     @Override
     public void keyTyped(KeyEvent ke) {//recive evento del teclado y q anule espacio
         if (ke.getSource() == ff.getFuncTextField() || ke.getSource() == ff.getIntervaloTextField() || ke.getSource() == ff.getX0TextField() || ke.getSource() == ff.getXnTextField()) {
