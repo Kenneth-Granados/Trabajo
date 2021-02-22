@@ -38,23 +38,24 @@ public class FuncionesFrame extends javax.swing.JInternalFrame {
         intervaloTextField.addKeyListener(fc);
     }
     
-    public void getgrafica() {
-        try {
+    public void getgrafica() throws Exception {
+         try {
             String func = funcTextField.getText();
             double x0 = Double.parseDouble(x0TextField.getText());
             double xn = Double.parseDouble(xnTextField.getText());
             double d = Double.parseDouble(intervaloTextField.getText());
-            
             Funcion f = new Funcion(func);
             double[] x = f.Rango(x0, xn, d);
             double[] y = f.evaluar(x);
             grafica.CrearGrafica(func, x, y);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "Chingue su madre" + ex.getMessage());
-        }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Chingue su madre" + e.getMessage());
+            }
+               
+    
     }
 
-    public void addgrafica() {
+    public void addgrafica() throws Exception {
         try {
             String func = funcTextField.getText();
             double x0 = Double.parseDouble(x0TextField.getText());
@@ -65,7 +66,7 @@ public class FuncionesFrame extends javax.swing.JInternalFrame {
             double[] y = f.evaluar(x);
             grafica.AgregarGrafica(func, x, y);
        
-        } catch (Exception ex) {
+        } catch (NumberFormatException ex) {
             Logger.getLogger(FuncionesFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
