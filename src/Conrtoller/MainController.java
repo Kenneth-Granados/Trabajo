@@ -5,11 +5,10 @@
  */
 package Conrtoller;
 
-
-import Views.CrearExamen;
+import Views.Examen2Frame;
+import Views.ExamenFrame;
 import Views.FuncionesFrame;
 import Views.Principal;
-import Views.ResolverExamen;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -29,10 +28,10 @@ public class MainController implements ActionListener{
     public void actionPerformed(ActionEvent ae) {
          switch(ae.getActionCommand()){
          case "Cargar":
-            invokeresolver();
+            invokecreate();
              break;
          case "Crear":
-           
+           invokeresolver();
              break;
          case "Funcion":
              invokeFuncion();
@@ -40,14 +39,16 @@ public class MainController implements ActionListener{
      }
     }
     
-    public void invokecreate(){
-       CrearExamen ce = new CrearExamen();
-       p.showChild(ce,false) ;       
+    public void invokecreate (){
+      ExamenFrame ef = new ExamenFrame();
+       p.showChild(ef,false) ; 
+       ef.InicioTiempo();     
    }
     
      public void invokeresolver(){
-       ResolverExamen re = new ResolverExamen();
-       p.showChild(re,false) ;       
+       Examen2Frame ef = new Examen2Frame();
+       p.showChild(ef,false) ; 
+       ef.InicioTiempo();       
    }
      
      public void invokeFuncion(){
