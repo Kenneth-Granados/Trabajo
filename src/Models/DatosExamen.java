@@ -20,7 +20,7 @@ public class DatosExamen implements Serializable{
 };
  
      String []respuesta = {
-    "3x < 9","Ninguna","Inecuación","El conjunto vacío","a < b, c < 0 ---> ac < bc"
+    "3x < 9","Ninguna","Inecuación","El conjunto vacío","a < b; c < 0 ---> ac < bc"
 };
    
      String[] posRespuesta={
@@ -28,7 +28,7 @@ public class DatosExamen implements Serializable{
          "-x + 6 < y,Ninguna,x + 6 > y,-x - 6 > y",
          "Radical,Inecuación,Ecuación,Sistema de ecuaciones",
          "El conjunto vacío,Dos puntos de la recta real,Un intervalo de la recta real,El conjunto de todos los números reales",
-         "a < b, c < d ---> a + c < b + d,a < b, c > 0 ---> ac < bc,a < b,c > d ---> a - c < b - d,a < b, c < 0 ---> ac < bc",
+         "a < b; c < d ---> a + c < b + d,a < b; c > 0 ---> ac < bc,a < b;c > d ---> a - c < b - d,a < b; c < 0 ---> ac < bc",
      };
      
     public String getPregunta(int pos) {
