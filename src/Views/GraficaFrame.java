@@ -27,12 +27,9 @@ public class GraficaFrame extends javax.swing.JInternalFrame {
        
     }
 //
-//    public void grafica() {
+//    public void grafica(String func,double x0,double xn,double d) {
 //        try {
-//             String func = ff.getFuncTextField().getText();
-//            double x0 = Double.parseDouble(ff.getX0TextField().getText());
-//            double xn = Double.parseDouble(ff.getXnTextField().getText());
-//            double d = Double.parseDouble(ff.getIntervaloTextField().getText());
+//             
 //            Funcion f = new Funcion(func);
 //            double[] x = f.Rango(x0, xn, d);
 //            double[] y = f.evaluar(x);
@@ -42,12 +39,9 @@ public class GraficaFrame extends javax.swing.JInternalFrame {
 //        }
 //    }
 //
-//    public void agregar() {
+//    public void agregar(String func,double x0,double xn,double d) {
 //        try {
-//             String func = ff.getFuncTextField().getText();
-//            double x0 = Double.parseDouble(ff.getX0TextField().getText());
-//            double xn = Double.parseDouble(ff.getXnTextField().getText());
-//            double d = Double.parseDouble(ff.getIntervaloTextField().getText());
+//            
 //            Funcion f = new Funcion(func);
 //            double[] x = f.Rango(x0, xn, d);
 //            double[] y = f.evaluar(x);

@@ -10,21 +10,23 @@ package Models;
  * @author Kenneth Granados
  */
 public class Datos2 extends DatosExamen{
-
+//hay me corrigen las falta de acento XD
     String []pregunta2 = {
-    "Pregunta 12?","Pregunta 22?","Pregunta 32?","Pregunta 42?","Pregunta 52?"
+    "Una ecuacion es la expresion matematica de una condicion de igualdad","La expresion x+3 = 5 es una:"
+     ,"La expresion 2x+4 = 7, a x se le denomina:","La ecuación 3y+6=0,y vale:","La expresion 2x=x+x, es una:"
+        
 };
  
      String []respuesta2 = {
-    "1","2","3","4","5"
+    "Verdadero","Ecuacion","Incognita","-2","Igualdad"
 };
    
      String[] posRespuesta2={
-         "1,24,32,24",
-         "2,42,25,26",
-         "3,42,25,62",
-         "4,25,26,27",
-         "5,26,722,8",
+         "Verdadero,Falso,Ni idea,Ninguna de las anteriores",
+         "Igualdad,Ecuación,Ninguna de las anteriores,Ni idea",
+         "Miembro,Incognita,Solucion,Ninguna de las anteriores",
+         "-2,0,Infinito,Ninguna de las anteriores",
+         "Igualdad,Ecuación,Ninguna de las anteriores,Ni idea",
      };
 
     @Override

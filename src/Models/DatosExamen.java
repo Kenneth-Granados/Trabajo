@@ -14,19 +14,21 @@ import java.util.StringTokenizer;
  */
 public class DatosExamen implements Serializable{
  String []pregunta = {
-    "Pregunta 1?","Pregunta 2?","Pregunta 3?","Pregunta 4?","Pregunta 5?"
+    "La inecuación 2x + 11 < -x + 20 es equivalente a:","¿Cuál de las siguientes inecuaciones es equivalente a: x - 6 < -y?",
+     "¿Cómo se llama la expresión algebraica que expresa una desigualdad?","¿Cuál es el conjunto de soluciones de la inecuación 3x2 + 100 > 0"
+         ,"¿Cuál de las siguientes afirmaciones es falsa?"
 };
  
      String []respuesta = {
-    "1","2","3","4","5"
+    "3x < 9","Ninguna","Inecuación","El conjunto vacío","a < b, c < 0 ---> ac < bc"
 };
    
      String[] posRespuesta={
-         "1,2,3,4",
-         "2,4,5,6",
-         "3,4,5,6",
-         "4,5,6,7",
-         "5,6,7,8",
+         "2x < 5x + 9,3x < 9,x > 3,x=0",
+         "-x + 6 < y,Ninguna,x + 6 > y,-x - 6 > y",
+         "Radical,Inecuación,Ecuación,Sistema de ecuaciones",
+         "El conjunto vacío,Dos puntos de la recta real,Un intervalo de la recta real,El conjunto de todos los números reales",
+         "a < b, c < d ---> a + c < b + d,a < b, c > 0 ---> ac < bc,a < b,c > d ---> a - c < b - d,a < b, c < 0 ---> ac < bc",
      };
      
     public String getPregunta(int pos) {
