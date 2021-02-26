@@ -32,15 +32,17 @@ public class Cronometro2 extends Thread{
     private void ejecutarCronometro(int x) {
        
       Examen2Frame.segundos--;
-        if (Examen2Frame.segundos==0) {
+          if ( Examen2Frame.segundos==0 && Examen2Frame.minutos==0) {
+            System.out.println("Hola");
+            System.exit(0);
+        } else {  
+           if (Examen2Frame.segundos==0) {
             Examen2Frame.segundos=59;
             Examen2Frame.minutos--;
         }
-//        while (ExamenFrame.minutos==0 && ExamenFrame.segundos==0) {
-//            JOptionPane.showMessageDialog(null, "No se puede regresar");
-//            System.exit(0);
-//     
-//        }
+           
+        }
+
         String textseg="",textmin="",texthora="";
         textseg+=Examen2Frame.segundos;
         textmin+=Examen2Frame.minutos;

@@ -2,7 +2,7 @@
 package Views;
 
 import Conrtoller.Examen2Controller;
-import Models.Cronometro;
+import Models.Cronometro2;
 import Models.Datos2;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class Examen2Frame extends javax.swing.JInternalFrame {
 
     Examen2Controller e2c;
-    public static int hora=0,minutos=0,segundos=59;
+    public static int hora=0,minutos=59,segundos=59;
     public static boolean inicio=true;
      boolean corriendo=false;
       Datos2 de= new Datos2();
@@ -116,7 +116,7 @@ public class Examen2Frame extends javax.swing.JInternalFrame {
   
      public void iniciarCronometro() {
          if (inicio==true) {
-             Cronometro c = new Cronometro(cronometroLabel);
+             Cronometro2 c = new Cronometro2(cronometroLabel);
              c.start();
          }
      }

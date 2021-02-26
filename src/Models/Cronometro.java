@@ -31,13 +31,16 @@ public class Cronometro extends Thread{
     private void ejecutarCronometro(int x) {
        
       ExamenFrame.segundos--;
-        if (ExamenFrame.segundos==0) {
+        if ( ExamenFrame.segundos==0 && ExamenFrame.minutos==0) {
+            System.out.println("Hola");
+            System.exit(0);
+        } else {  
+           if (ExamenFrame.segundos==0) {
             ExamenFrame.segundos=59;
             ExamenFrame.minutos--;
         }
-    if(ExamenFrame.segundos==0 && ExamenFrame.minutos==0){
-               System.out.println("ccc++++++++++++++++++++");
-           }
+           
+        }
         String textseg="",textmin="",texthora="";
         textseg+=ExamenFrame.segundos;
         textmin+=ExamenFrame.minutos;
