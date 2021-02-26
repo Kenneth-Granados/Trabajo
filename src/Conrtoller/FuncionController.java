@@ -10,6 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -24,14 +26,27 @@ public class FuncionController implements ActionListener, KeyListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent ae) {
+    public void actionPerformed(ActionEvent ae) {//no se xq me presenta error
         switch (ae.getActionCommand()) {
             case "Graficar":
-                ff.getgrafica();
+            {
+                try {
+                    ff.getgrafica();
+                } catch (Exception ex) {
+                    Logger.getLogger(FuncionController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
                 break;
+
             case "Agregar":
-                ff.addgrafica();
-                break;
+            {
+                try {
+                    ff.addgrafica();
+                } catch (Exception ex) {
+                    Logger.getLogger(FuncionController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
             case "Limpiar":
                 ff.clean();
                 break;

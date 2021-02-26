@@ -30,6 +30,7 @@ public class ExamenController implements ActionListener{
          case "Terminar":
              ef.Resultado();
              ef.FinTiempo();
+             ef.dispose();
              break;
          case "Avanzar":
              ef.AvanceData();

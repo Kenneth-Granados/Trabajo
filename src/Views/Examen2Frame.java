@@ -11,10 +11,10 @@ import javax.swing.JOptionPane;
  *
  * @author Kenneth Granados
  */
-public class Examen2Frame extends javax.swing.JInternalFrame {
+public class Examen2Frame extends javax.swing.JInternalFrame{
 
     Examen2Controller e2c;
-    public static int hora=0,minutos=59,segundos=59;
+    public static int hora=0,minutos=0,segundos=0;
     public static boolean inicio=true;
      boolean corriendo=false;
       Datos2 de= new Datos2();
@@ -110,15 +110,17 @@ public class Examen2Frame extends javax.swing.JInternalFrame {
             inicio=false;
             corriendo=false;
              hora=0;
-            minutos=59;
-           segundos=59;
+            minutos=0;
+           segundos=0;
+           
     }
   
      public void iniciarCronometro() {
          if (inicio==true) {
-             Cronometro2 c = new Cronometro2(cronometroLabel);
-             c.start();
+             Cronometro2 c2 = new Cronometro2(cronometroLabel);
+             c2.start();
          }
+     
      }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -210,27 +212,27 @@ public class Examen2Frame extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(questionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE))
-                        .addGap(36, 36, 36)
-                        .addComponent(cronometroLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cronometroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(regresarButton)
                 .addGap(35, 35, 35)
                 .addComponent(terminarButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addComponent(avanzarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(170, 170, 170))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2))
-                    .addComponent(cronometroLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(cronometroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(questionLabel)
                 .addGap(18, 18, 18)
                 .addComponent(resp1RadioButton)
@@ -240,7 +242,7 @@ public class Examen2Frame extends javax.swing.JInternalFrame {
                 .addComponent(resp3RadioButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(resp4RadioButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(avanzarButton)
                     .addComponent(regresarButton)

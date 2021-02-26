@@ -30,6 +30,7 @@ public class Examen2Controller implements ActionListener{
          case "Terminar":
              e2f.Resultado();
              e2f.FinTiempo();
+             e2f.dispose();
              break;
          case "Avanzar":
              e2f.AvanceData();

@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class ExamenFrame extends javax.swing.JInternalFrame {
     ExamenController ec;
-     public static int hora=0,minutos=0,segundos=10;
+     public static int hora=0,minutos=0,segundos=0;
     public static boolean inicio=true;
      boolean corriendo=false;
     
@@ -112,14 +112,16 @@ public class ExamenFrame extends javax.swing.JInternalFrame {
             corriendo=false;
              hora=0;
             minutos=0;
-           segundos=10;
+           segundos=0;
     }
   
      public void iniciarCronometro() {
          if (inicio==true) {
              Cronometro c = new Cronometro(cronometroLabel);
              c.start();
+             
          }
+         
      }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -242,7 +244,7 @@ public class ExamenFrame extends javax.swing.JInternalFrame {
                 .addComponent(resp3RadioButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(resp4RadioButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(avanzarButton)
                     .addComponent(regresarButton)

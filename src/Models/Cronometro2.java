@@ -2,7 +2,6 @@
 package Models;
 
 import Views.Examen2Frame;
-import Views.ExamenFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -19,35 +18,32 @@ public class Cronometro2 extends Thread{
     public void run(){
         try {
             int x=0;
-            while (ExamenFrame.inicio==true) {                
+            while (Examen2Frame.inicio==true) {                
                Thread.sleep(1000);
                ejecutarCronometro(x);
                x++;
             }
-        } catch (Exception e) {
+        } catch (InterruptedException e) {
             JOptionPane.showMessageDialog(null,"Exception: " +e.getMessage());
         }
     }
 
     private void ejecutarCronometro(int x) {
-       
-      Examen2Frame.segundos--;
-          if ( Examen2Frame.segundos==0 && Examen2Frame.minutos==0) {
-            System.out.println("Hola");
-            System.exit(0);
-        } else {  
-           if (Examen2Frame.segundos==0) {
-            Examen2Frame.segundos=59;
-            Examen2Frame.minutos--;
+          Examen2Frame.segundos++;
+        if ( Examen2Frame.segundos>59) {
+           Examen2Frame.segundos=0;
+           Examen2Frame.minutos++;
+           if ( Examen2Frame.minutos>59) {
+           Examen2Frame.segundos=0;
+           Examen2Frame.minutos=0;
+           Examen2Frame.hora++;
         }
-           
         }
-
         String textseg="",textmin="",texthora="";
         textseg+=Examen2Frame.segundos;
         textmin+=Examen2Frame.minutos;
         texthora+=Examen2Frame.hora;
         String reloj= texthora+":"+textmin+":"+textseg;
         etiq.setText(reloj);
-    }
+}
 }
